@@ -3,6 +3,8 @@ import "./calculator.css";
 
 export default function Claculator() {
   const [result, setResult] = useState("");
+
+  const e = eval;
   function clickHandler(e) {
     setResult(result.concat(e.target.value));
   }
@@ -12,7 +14,7 @@ export default function Claculator() {
   }
 
   function calculate() {
-    setResult(eval(result).toString());
+    setResult(e(result).toString());
   }
 
   return (
